@@ -111,6 +111,8 @@ networks:
  - Criar conta
  - Acessar IAM
    - Gerar accessKey e secretkey
+   - https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1#/home
  - Acessar o SNS (Serviço de notificação)
    - Configuração SMS
+   - https://us-east-1.console.aws.amazon.com/sns/v3/home
      - Cadastrar número de telefone
