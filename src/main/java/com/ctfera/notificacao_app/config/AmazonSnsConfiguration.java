@@ -17,7 +17,7 @@ public class AmazonSnsConfiguration {
     @Value("${aws.accessKey}")
     private String accessKey;
 
-    @Value("@aws.secretKey")
+    @Value("${aws.secretKey}")
     private String secretKey;
 
     @Bean
