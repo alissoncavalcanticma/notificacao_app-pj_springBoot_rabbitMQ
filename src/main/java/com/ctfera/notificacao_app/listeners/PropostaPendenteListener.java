@@ -16,13 +16,18 @@ public class PropostaPendenteListener {
 
     @RabbitListener(queues = "${rabbitmq.queue.proposta.pendente}") //Annotation para criar Listener, definindo a queue
     public void propostaPendente(Proposta proposta){
-        String mensagem = String.format(MensagemConstante.PROPOSTA_EM_ANALISE, proposta.getUsuario().getNome());
-        notificacaoSnsService.notificar(proposta.getUsuario().getTelefone(), mensagem);
+        String nome = proposta.getUsuario().getNome();
+        String mensagem = String.format(MensagemConstante.PROPOSTA_EM_ANALISE, nome);
+        String telefone = proposta.getUsuario().getTelefone();
+        notificacaoSnsService.notificar(telefone, mensagem);
 
     }
 
     @RabbitListener(queues = "${rabbitmq.queue.proposta.concluida}")
     public void propostaConcluida(Proposta proposta){
         String nome = proposta.getUsuario().getNome();
+        String mensagem = String.format(MensagemConstante.PROPOSTA_APROVADA, nome);
+        String telefone = proposta.getUsuario().getTelefone();
+        notificacaoSnsService.notificar(telefone, mensagem);
     }
 }

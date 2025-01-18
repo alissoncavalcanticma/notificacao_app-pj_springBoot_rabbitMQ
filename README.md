@@ -5,15 +5,6 @@ Projeto de microserviços com Spring Boot RabbitMQ e AWS
 - Lombok //Developer Tools
 - Spring for RabbitMQ //Messaging
 
-### Configurações AWS:
-
-- Criar conta
-- Acessar IAM
-    - Gerar accessKey e secretkey
-- Acessar o SNS (Serviço de notificação)
-    - Configuração SMS
-        - Cadastrar número de telefone
-
 ### Imagens docker
 
 
