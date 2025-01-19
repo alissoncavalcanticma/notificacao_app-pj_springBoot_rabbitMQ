@@ -13,7 +13,7 @@ public class PropostaPendenteListener {
     @Autowired
     private NotificacaoSnsService notificacaoSnsService;
 
-
+    //Criando Listener para file de proposta pendente
     @RabbitListener(queues = "${rabbitmq.queue.proposta.pendente}") //Annotation para criar Listener, definindo a queue
     public void propostaPendente(Proposta proposta){
         String nome = proposta.getUsuario().getNome();
@@ -23,6 +23,7 @@ public class PropostaPendenteListener {
 
     }
 
+    //Criando Listener para file de proposta concluída/aprovada
     @RabbitListener(queues = "${rabbitmq.queue.proposta.concluida}")
     public void propostaConcluida(Proposta proposta){
         String nome = proposta.getUsuario().getNome();
